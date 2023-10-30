@@ -16,6 +16,11 @@
           <span th:text="${member.email}"></span>
           <span>Age:</span>
           <span th:text="${member.age}"></span>
+          <span th:text="${membersList.indexOf(member)}"></span>
+          <a
+            th:href="@{/remove-member/{memberIndex}(memberIndex=${membersList.indexOf(member)})}"
+            >[X]</a
+          >
         </div>
       </li>
     </ul>

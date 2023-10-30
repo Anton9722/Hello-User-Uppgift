@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 
@@ -30,12 +31,19 @@ public class HelloUserController {
 
     @PostMapping("/new-member")
     String newMember(@ModelAttribute Members newMembers, Model model) {
-        if (newMembers.getEmail() == null || newMembers.getName() == null || newMembers.getAge() <= 0) {
+        if (newMembers.getEmail() == "" || newMembers.getName() == "" || newMembers.getAge() <= 0) {
             System.out.println("Felaktig inmatning");
         }else{
             HelloUserApplication.membersList.add(newMembers);
         }
         return "redirect:/addnewmember";
+    }
+
+    @GetMapping("/remove-member/{memberIndex}")
+    String removeMember(@PathVariable int memberIndex){
+        System.out.println(memberIndex);
+        HelloUserApplication.membersList.remove(memberIndex);
+        return "redirect:/members";
     }
     
 
