@@ -4,11 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Start Page</title>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <h1>Start Page</h1>
     <a th:href="@{/members}">Show All Members</a>
     <br />
-    <a th:href="@{/addnewmember}">Add New Member</a>
+    <a id="addNewMemberPage" th:href="@{/addnewmember}">Add New Member</a>
+    <br />
+    <a th:href="@{/adminlogin}">Admin Login</a>
   </body>
 </html>

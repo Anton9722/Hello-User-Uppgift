@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login</title>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>Admin Login</h1>
+    <h4>Username</h4>
+    <input id="adminLoginUsername" type="text" />
+    <h4>Password</h4>
+    <input id="adminLoginPassword" type="text" />
+    <button id="adminLoginBtn">Login</button>
+    <br />
+    <a th:href="@{/}">Start Page</a>
+  </body>
+</html>

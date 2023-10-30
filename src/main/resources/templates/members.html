@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>our Members</title>
+    <title>Our Members</title>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <h1>Members</h1>
@@ -14,10 +15,8 @@
           <span th:text="${member.name}"></span>
           <span>Email:</span>
           <span th:text="${member.email}"></span>
-          <span>Age:</span>
-          <span th:text="${member.age}"></span>
-          <span th:text="${membersList.indexOf(member)}"></span>
           <a
+            class="removeMember"
             th:href="@{/remove-member/{memberIndex}(memberIndex=${membersList.indexOf(member)})}"
             >[X]</a
           >

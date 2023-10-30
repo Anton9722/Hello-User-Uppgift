@@ -3,13 +3,11 @@ package com.HelloUser.HelloUser;
 public class Members {
     private String name;
     private String email;
-    private int age;
     
 
-    public Members(String name, String email, int age){
+    public Members(String name, String email){
         this.name = name;
         this.email = email;
-        this.age = age;
     }
 
 
@@ -30,16 +28,6 @@ public class Members {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-
-    public int getAge() {
-        return age;
-    }
-
-
-    public void setAge(int age) {
-        this.age = age;
     }
     
 }

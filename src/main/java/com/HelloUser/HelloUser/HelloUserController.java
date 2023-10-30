@@ -17,6 +17,11 @@ public class HelloUserController {
         return "startpage";
     }
 
+    @GetMapping("/adminlogin")
+    String getAdminLogin(){
+        return "adminLogin";
+    }
+
     @GetMapping("/members")
     String getMembersPage(Model model) {
         model.addAttribute("membersList", HelloUserApplication.membersList);
@@ -25,13 +30,13 @@ public class HelloUserController {
 
     @GetMapping("/addnewmember")
     String getAddNewMemberPage(Model model) {
-        model.addAttribute("newMember", new Members(null, null, 0));
+        model.addAttribute("newMember", new Members(null, null));
         return "addnewmember";
     }
 
     @PostMapping("/new-member")
     String newMember(@ModelAttribute Members newMembers, Model model) {
-        if (newMembers.getEmail() == "" || newMembers.getName() == "" || newMembers.getAge() <= 0) {
+        if (newMembers.getEmail() == "" || newMembers.getName() == "") {
             System.out.println("Felaktig inmatning");
         }else{
             HelloUserApplication.membersList.add(newMembers);
