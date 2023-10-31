@@ -13,6 +13,8 @@ try {
       localStorage.setItem("adminLogedIn", true);
     } else {
       console.log("Incorrect password or username");
+      adminLoginUsername.textContent == "";
+      adminLoginPassword.textContent == "";
     }
   });
 } catch (e) {

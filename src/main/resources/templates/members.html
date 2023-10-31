@@ -5,24 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Members</title>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Poppins:wght@300;400;600&family=Roboto:ital,wght@1,300&family=Sacramento&family=Space+Mono&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Members</h1>
+    <h1 class="title">Our Members</h1>
     <ul>
       <li th:each="member : ${membersList}">
-        <div>
-          <span>Name:</span>
-          <span th:text="${member.name}"></span>
-          <span>Email:</span>
-          <span th:text="${member.email}"></span>
+        <div class="container">
+          <span class="memberInfo" th:text="${member.name}"></span>
+          <br />
+          <span class="memberInfo" th:text="${member.email}"></span>
+          <br />
           <a
+            id="linksMembers"
             class="removeMember"
             th:href="@{/remove-member/{memberIndex}(memberIndex=${membersList.indexOf(member)})}"
-            >[X]</a
+            >Remove Member</a
           >
         </div>
       </li>
     </ul>
-    <a th:href="@{/}">Start Page</a>
+    <a class="links" th:href="@{/}">Go To Start Page</a>
   </body>
 </html>

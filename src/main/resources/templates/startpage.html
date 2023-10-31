@@ -5,13 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Start Page</title>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Poppins:wght@300;400;600&family=Roboto:ital,wght@1,300&family=Sacramento&family=Space+Mono&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Start Page</h1>
-    <a th:href="@{/members}">Show All Members</a>
-    <br />
-    <a id="addNewMemberPage" th:href="@{/addnewmember}">Add New Member</a>
-    <br />
-    <a th:href="@{/adminlogin}">Admin Login</a>
+    <div class="container">
+      <h1 class="title">Start Page</h1>
+      <a class="links" th:href="@{/members}">Show All Members</a>
+      <br />
+      <a class="links" id="addNewMemberPage" th:href="@{/addnewmember}"
+        >Add New Member</a
+      >
+      <br />
+      <a class="links" th:href="@{/adminlogin}">Admin Login</a>
+    </div>
   </body>
 </html>
